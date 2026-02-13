@@ -1,0 +1,58 @@
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/YOUR_REPO
+  branch: main
+  base_url: YOUR_AUTH_WORKER_URL
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "site"
+    label: "Site Content"
+    format: "json"
+    files:
+      - name: "site"
+        label: "Site Text"
+        file: "content/site.json"
+        fields:
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - { label: "Home intro", name: "intro", widget: "text" }
+          - { label: "Featured line", name: "featuredLine", widget: "string" }
+
+  - name: "inventory"
+    label: "Refurbished Inventory"
+    format: "json"
+    files:
+      - name: "inventory"
+        label: "Inventory Items"
+        file: "content/inventory.json"
+        fields:
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title}} — {{fields.category}} — ${{fields.price}} — {{fields.status}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Category", name: "category", widget: "select", options: ["Laptops","Desktops","Monitors"] }
+              - { label: "Status", name: "status", widget: "select", options: ["Available","Pending","Sold"], default: "Available" }
+              - { label: "Price (USD)", name: "price", widget: "number", value_type: "int", min: 0 }
+              - { label: "Summary (short)", name: "summary", widget: "string", required: false }
+              - { label: "Specs", name: "specs", widget: "string", required: false }
+              - { label: "Condition", name: "condition", widget: "string", required: false }
+              - { label: "Notes", name: "notes", widget: "text", required: false }
+              - label: "Photos"
+                name: "photos"
+                widget: "list"
+                required: false
+                field: { label: "Image", name: "image", widget: "image" }
+
+  - name: "businessToggles"
+    label: "Business Visibility"
+    format: "json"
+    files:
+      - name: "businesses"
+        label: "Business Toggles"
+        file: "content/businesses.json"
+        fields:
+          - { label: "Show pressure washing", name: "showPressureWashing", widget: "boolean", default: false }
