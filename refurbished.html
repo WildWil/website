@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Refurbished Tech | Will Ward</title>
+  <meta name="description" content="Refurbished laptops, desktops, and monitors for sale in Mount Pleasant, SC. Public prices, tested devices. Cash only." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.png" alt="Will Ward logo" />
+        <div>
+          <div class="title">Will Ward</div>
+          <div class="subtitle" id="siteTagline">Computer repair + refurbished tech</div>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="refurbished.html">Refurbished</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="about.html">About</a>
+        <a href="businesses.html">Businesses</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="hero">
+      <h1>Refurbished tech for sale</h1>
+      <p>Clear specs, clean installs, and honest notes. Cash only. Mount Pleasant, SC (Dunes West and nearby).</p>
+
+      <div class="filters">
+        <select class="select" id="category">
+          <option>All</option>
+          <option>Laptops</option>
+          <option>Desktops</option>
+          <option>Monitors</option>
+        </select>
+
+        <select class="select" id="status">
+          <option>All</option>
+          <option>Available</option>
+          <option>Pending</option>
+          <option>Sold</option>
+        </select>
+
+        <input class="search" id="search" placeholder="Search (ThinkPad, i5, 16GB, HDMI...)" />
+      </div>
+
+      <div class="notice" style="margin-top:12px;">
+        Want something specific? Text me what you need (budget + use case) and I’ll tell you what matches.
+      </div>
+    </div>
+
+    <div id="inventory" class="inventory"></div>
+
+    <div class="footer">
+      Tip: You can add/edit items from your phone at <strong>/admin</strong> once setup is complete.
+    </div>
+  </div>
+
+  <div class="sticky-bar">
+    <div class="sticky-inner">
+      <a href="sms:8439014691">Text</a>
+      <a class="secondary" href="mailto:warwil533@gmail.com">Email</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
